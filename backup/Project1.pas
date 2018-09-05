@@ -3,7 +3,7 @@ program Project1;
 {$mode objfpc}{$H+}
 
 uses
-  crt,
+  crt,  //tu musi byt ciarka
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
@@ -83,7 +83,11 @@ begin
              if (plocha[a,b]<>'*') or (plocha[a,b]<>'-') then
              begin
                   value:=plocha[a,b];
-
+                  if (b>1) and (plocha[a,b]='*') then
+                  begin
+                       plocha[a,b]:='*';
+                       //treba dokončiť
+                  end;
              end;
          end;
 end;
@@ -110,7 +114,6 @@ procedure right;
 begin  
      make_num;
      write_area;
-     plocha[1,7]:='5';
 end;
 
 begin
