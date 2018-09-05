@@ -3,7 +3,7 @@ program Project1;
 {$mode objfpc}{$H+}
 
 uses
-  crt,
+  crt,  //tu musi byt ciarka
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
