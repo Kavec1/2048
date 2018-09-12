@@ -3,7 +3,7 @@ program Project1;
 {$mode objfpc}{$H+}
 
 uses
-  crt,  //tu musi byt ciarka
+  crt, sysutils,
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
@@ -13,16 +13,17 @@ uses
 var
   x,y:integer;
   c:char;
-  plocha:array[1..7,1..7] of char;
-
-function num(a,b:integer):integer;
+  plocha:array[1..7,1..7] of string;
+procedure move_num(a:integer;value:string);
 begin
-         num:=random(a)+b;
-end;
-
-function bool(f,g:integer):boolean;
-begin
-         bool:= f>g;
+     if plocha[a,1]='*' then
+        plocha[a,1]:=value
+     else if plocha[a,3]='*' then
+        plocha[a,3]:=value
+        else if plocha[a,5]='*' then
+           plocha[a,5]:=value
+           else if plocha[a,7]='*' then
+              plocha[a,7]:=value
 end;
 
 procedure write_area;
@@ -31,7 +32,6 @@ begin
      for y:= 1 to 7 do
            for x:= 1 to 7 do
            begin
-               gotoxy(50+x,2+y);
                if x = 7 then
                begin
                   writeln(plocha[x,y]);
@@ -72,46 +72,47 @@ begin
      end;
 end;
 
-procedure move;
+procedure find_num;
 var
   a,b:integer;
-  value:char;
+  value:string;
 begin
      for a:=1 to 7 do
          for b:=1 to 7 do
-         begin
-             if (plocha[a,b]<>'*') or (plocha[a,b]<>'-') then
-             begin
-                  value:=plocha[a,b];
-                  if (b>1) and (plocha[a,b]='*') then
-                  begin
-                       plocha[a,b]:='*';
-                       //treba dokončiť
+             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
+             else
+                 begin
+                     value:=plocha[a,b];
+                     plocha[a,b]:='*'; 
+                     move_num(a,b,value);
+                     writeln(value+' '+IntToStr(a)+' '+IntToStr(b));
                   end;
-             end;
-         end;
 end;
 
 procedure up;
 begin
+     find_num;
      make_num;
      write_area;
 end;
 
 procedure down;
-begin  
+begin
+     find_num;
      make_num;
      write_area;
 end;
 
 procedure left;
-begin  
+begin
+     find_num;
      make_num;
      write_area;
 end;
 
 procedure right;
-begin  
+begin
+     find_num;
      make_num;
      write_area;
 end;
@@ -139,7 +140,6 @@ begin
   for y:= 1 to 7 do
            for x:= 1 to 7 do
            begin
-               gotoxy(50+x,2+y);
                if x = 7 then
                begin
                   writeln(plocha[x,y]);
