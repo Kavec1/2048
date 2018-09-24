@@ -14,7 +14,7 @@ var
   x,y:integer;
   c:char;
   plocha:array[1..7,1..7] of string;
-procedure move_num_up(a:integer;value:string);
+procedure move_num(a:integer;value:string);
 begin
      if plocha[a,1]='*' then
         plocha[a,1]:=value
@@ -84,7 +84,7 @@ begin
                  begin
                      value:=plocha[a,b];
                      plocha[a,b]:='*'; 
-                     move_num_up(a,value);
+                     move_num(a,value);
                      writeln(value+' '+IntToStr(a)+' '+IntToStr(b));
                   end;
 end;
