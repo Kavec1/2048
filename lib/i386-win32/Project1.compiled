@@ -2,4 +2,5 @@
 <CONFIG>
   <Compiler Value="C:\lazarus\fpc\2.6.4\bin\i386-win32\fpc.exe" Date="1162574844"/>
   <Params Value=" -MObjFPC -Scghi -O1 -vewnhi -FiC:\Users\b15kavec\Documents\GitHub\2048\lib\i386-win32 -FuC:\Users\b15kavec\Documents\GitHub\2048\ -FUC:\Users\b15kavec\Documents\GitHub\2048\lib\i386-win32\ -l Project1.pas"/>
+  <Complete Value="False"/>
 </CONFIG>

@@ -8,11 +8,12 @@
       <Unit0>
         <Filename Value="Project1.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="Project1"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="122"/>
-        <CursorPos X="33" Y="87"/>
+        <TopLine Value="25"/>
+        <CursorPos X="17" Y="95"/>
         <FoldState Value=" T3S0E1F"/>
         <UsageCount Value="53"/>
         <Loaded Value="True"/>

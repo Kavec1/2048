@@ -12,8 +12,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="14"/>
-        <CursorPos X="103" Y="17"/>
+        <TopLine Value="45"/>
+        <CursorPos X="17" Y="94"/>
         <FoldState Value=" T3S0E1F"/>
         <UsageCount Value="53"/>
         <Loaded Value="True"/>
@@ -22,7 +22,7 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="20" HistoryIndex="19">
+    <JumpHistory Count="21" HistoryIndex="20">
       <Position1>
         <Filename Value="Project1.pas"/>
         <Caret Line="29" Column="16" TopLine="21"/>
@@ -103,6 +103,10 @@
         <Filename Value="Project1.pas"/>
         <Caret Line="21" Column="25" TopLine="11"/>
       </Position20>
+      <Position21>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="95" Column="17" TopLine="25"/>
+      </Position21>
     </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>

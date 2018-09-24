@@ -19,11 +19,11 @@ begin
      if plocha[a,1]='*' then
         plocha[a,1]:=value
      else if plocha[a,3]='*' then
-        plocha[a,3]:=value
+             plocha[a,3]:=value
         else if plocha[a,5]='*' then
-           plocha[a,5]:=value
+                plocha[a,5]:=value
            else if plocha[a,7]='*' then
-              plocha[a,7]:=value
+                   plocha[a,7]:=value
 end;
 
 procedure write_area;
@@ -72,7 +72,7 @@ begin
      end;
 end;
 
-procedure find_num;
+procedure find_num_up;
 var
   a,b:integer;
   value:string;
@@ -88,31 +88,49 @@ begin
                      writeln(value+' '+IntToStr(a)+' '+IntToStr(b));
                   end;
 end;
+procedure find_num_down;
+var
+
+begin
+
+end;
+procedure find_num_left;
+var
+
+begin
+
+end;
+procedure find_num_dright;
+var
+
+begin
+
+end;
 
 procedure up;
 begin
-     find_num;
+     find_num_up;
      make_num;
      write_area;
 end;
 
 procedure down;
 begin
-     find_num;
+     find_num_down;
      make_num;
      write_area;
 end;
 
 procedure left;
 begin
-     find_num;
+     find_num_left;
      make_num;
      write_area;
 end;
 
 procedure right;
 begin
-     find_num;
+     find_num_right;
      make_num;
      write_area;
 end;
