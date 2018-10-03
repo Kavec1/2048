@@ -25,41 +25,98 @@ begin
            else if plocha[a,7]='*' then
                    plocha[a,7]:=value
 end;
-
-procedure move_num_down(a:integer;value:string);    //opraviť
+procedure move_num_down(a:integer;value:string);
 begin
-     if plocha[a,1]='*' then
-        plocha[a,1]:=value
-     else if plocha[a,3]='*' then
-             plocha[a,3]:=value
-        else if plocha[a,5]='*' then
-                plocha[a,5]:=value
-           else if plocha[a,7]='*' then
-                   plocha[a,7]:=value
+     if plocha[a,7]='*' then
+        plocha[a,7]:=value
+     else if plocha[a,5]='*' then
+             plocha[a,5]:=value
+        else if plocha[a,3]='*' then
+                plocha[a,3]:=value
+           else if plocha[a,1]='*' then
+                   plocha[a,1]:=value
 end;
-
-procedure move_num_right(a:integer;value:string);    //opraviť
+procedure move_num_left(b:integer;value:string);
 begin
-     if plocha[a,1]='*' then
-        plocha[a,1]:=value
-     else if plocha[a,3]='*' then
-             plocha[a,3]:=value
-        else if plocha[a,5]='*' then
-                plocha[a,5]:=value
-           else if plocha[a,7]='*' then
-                   plocha[a,7]:=value
+     if plocha[1,b]='*' then
+        plocha[1,b]:=value
+     else if plocha[3,b]='*' then
+             plocha[3,b]:=value
+        else if plocha[5,b]='*' then
+                plocha[5,b]:=value
+           else if plocha[7,b]='*' then
+                   plocha[7,b]:=value
 end;
-
-procedure move_num_left(a:integer;value:string);    //opraviť
+procedure move_num_right(b:integer;value:string);
 begin
-     if plocha[a,1]='*' then
-        plocha[a,1]:=value
-     else if plocha[a,3]='*' then
-             plocha[a,3]:=value
-        else if plocha[a,5]='*' then
-                plocha[a,5]:=value
-           else if plocha[a,7]='*' then
-                   plocha[a,7]:=value
+     if plocha[7,b]='*' then
+        plocha[7,b]:=value
+     else if plocha[5,b]='*' then
+             plocha[5,b]:=value
+        else if plocha[3,b]='*' then
+                plocha[3,b]:=value
+           else if plocha[1,b]='*' then
+                   plocha[1,b]:=value
+end;
+procedure find_num_up;
+var
+  a,b:integer;
+  value:string;
+begin
+     for a:=1 to 7 do
+         for b:=1 to 7 do
+             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
+             else
+                 begin
+                     value:=plocha[a,b];
+                     plocha[a,b]:='*'; 
+                     move_num_up(a,value);
+                  end;
+end;
+procedure find_num_down;
+var
+  a,b:integer;
+  value:string;
+begin
+     for a:=7 downto 1 do
+         for b:=7 downto 1 do
+             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
+             else
+                 begin
+                     value:=plocha[a,b];
+                     plocha[a,b]:='*';
+                     move_num_down(a,value);
+                  end;
+end;
+procedure find_num_left;
+var
+  a,b:integer;
+  value:string;
+begin
+     for b:=1 to 7 do
+         for a:=1 to 7 do
+             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
+             else
+                 begin
+                     value:=plocha[a,b];
+                     plocha[a,b]:='*';
+                     move_num_left(b,value);
+                  end;
+end;
+procedure find_num_right;
+var
+  a,b:integer;
+  value:string;
+begin
+     for b:=7 downto 1 do
+         for a:=7 downto 1 do
+             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
+             else
+                 begin
+                     value:=plocha[a,b];
+                     plocha[a,b]:='*';
+                     move_num_right(b,value);
+                  end;
 end;
 
 procedure write_area;
@@ -106,71 +163,6 @@ begin
      begin
         plocha[x,y]:='2';
      end;
-end;
-
-procedure find_num_up;
-var
-  a,b:integer;
-  value:string;
-begin
-     for a:=1 to 7 do
-         for b:=1 to 7 do
-             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
-             else
-                 begin
-                     value:=plocha[a,b];
-                     plocha[a,b]:='*'; 
-                     move_num_up(a,value);
-                     writeln(value+' '+IntToStr(a)+' '+IntToStr(b));
-                  end;
-end;
-procedure find_num_down;   //opraviť
-var
-  a,b:integer;
-  value:string;
-begin
-     for a:=1 to 7 do
-         for b:=1 to 7 do
-             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
-             else
-                 begin
-                     value:=plocha[a,b];
-                     plocha[a,b]:='*';
-                     move_num_up(a,value);
-                     writeln(value+' '+IntToStr(a)+' '+IntToStr(b));
-                  end;
-end;
-procedure find_num_left;   //opraviť
-var
-  a,b:integer;
-  value:string;
-begin
-     for a:=1 to 7 do
-         for b:=1 to 7 do
-             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
-             else
-                 begin
-                     value:=plocha[a,b];
-                     plocha[a,b]:='*';
-                     move_num_up(a,value);
-                     writeln(value+' '+IntToStr(a)+' '+IntToStr(b));
-                  end;
-end;
-procedure find_num_right;  //opraviť
-var
-  a,b:integer;
-  value:string;
-begin
-     for a:=1 to 7 do
-         for b:=1 to 7 do
-             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
-             else
-                 begin
-                     value:=plocha[a,b];
-                     plocha[a,b]:='*';
-                     move_num_up(a,value);
-                     writeln(value+' '+IntToStr(a)+' '+IntToStr(b));
-                  end;
 end;
 
 procedure up;
