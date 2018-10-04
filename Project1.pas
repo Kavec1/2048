@@ -13,59 +13,59 @@ uses
 var
   x,y:integer;
   c:char;
-  plocha:array[1..7,1..7] of string;
+  plocha:array[0..3,0..3] of string;
 procedure move_num_up(a:integer;value:string);
 begin
-     if plocha[a,1]='*' then
-        plocha[a,1]:=value
-     else if plocha[a,3]='*' then
-             plocha[a,3]:=value
-        else if plocha[a,5]='*' then
-                plocha[a,5]:=value
-           else if plocha[a,7]='*' then
-                   plocha[a,7]:=value
+     if plocha[a,0]='*' then
+        plocha[a,0]:=value
+     else if plocha[a,1]='*' then
+             plocha[a,1]:=value
+        else if plocha[a,2]='*' then
+                plocha[a,2]:=value
+           else if plocha[a,3]='*' then
+                   plocha[a,3]:=value
 end;
 procedure move_num_down(a:integer;value:string);
 begin
-     if plocha[a,7]='*' then
-        plocha[a,7]:=value
-     else if plocha[a,5]='*' then
-             plocha[a,5]:=value
-        else if plocha[a,3]='*' then
-                plocha[a,3]:=value
-           else if plocha[a,1]='*' then
-                   plocha[a,1]:=value
+     if plocha[a,3]='*' then
+        plocha[a,3]:=value
+     else if plocha[a,2]='*' then
+             plocha[a,2]:=value
+        else if plocha[a,1]='*' then
+                plocha[a,1]:=value
+           else if plocha[a,0]='*' then
+                   plocha[a,0]:=value
 end;
 procedure move_num_left(b:integer;value:string);
 begin
-     if plocha[1,b]='*' then
-        plocha[1,b]:=value
-     else if plocha[3,b]='*' then
-             plocha[3,b]:=value
-        else if plocha[5,b]='*' then
-                plocha[5,b]:=value
-           else if plocha[7,b]='*' then
-                   plocha[7,b]:=value
+     if plocha[0,b]='*' then
+        plocha[0,b]:=value
+     else if plocha[1,b]='*' then
+             plocha[1,b]:=value
+        else if plocha[2,b]='*' then
+                plocha[2,b]:=value
+           else if plocha[3,b]='*' then
+                   plocha[3,b]:=value
 end;
 procedure move_num_right(b:integer;value:string);
 begin
-     if plocha[7,b]='*' then
-        plocha[7,b]:=value
-     else if plocha[5,b]='*' then
-             plocha[5,b]:=value
-        else if plocha[3,b]='*' then
-                plocha[3,b]:=value
-           else if plocha[1,b]='*' then
-                   plocha[1,b]:=value
+     if plocha[3,b]='*' then
+        plocha[3,b]:=value
+     else if plocha[2,b]='*' then
+             plocha[2,b]:=value
+        else if plocha[1,b]='*' then
+                plocha[1,b]:=value
+           else if plocha[0,b]='*' then
+                   plocha[0,b]:=value
 end;
 procedure find_num_up;
 var
   a,b:integer;
   value:string;
 begin
-     for a:=1 to 7 do
-         for b:=1 to 7 do
-             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
+     for a:=0 to 3 do
+         for b:=0 to 3 do
+             if (plocha[a,b]='*') then
              else
                  begin
                      value:=plocha[a,b];
@@ -78,9 +78,9 @@ var
   a,b:integer;
   value:string;
 begin
-     for a:=7 downto 1 do
-         for b:=7 downto 1 do
-             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
+     for a:=3 downto 0 do
+         for b:=3 downto 0 do
+             if (plocha[a,b]='*') then
              else
                  begin
                      value:=plocha[a,b];
@@ -93,9 +93,9 @@ var
   a,b:integer;
   value:string;
 begin
-     for b:=1 to 7 do
-         for a:=1 to 7 do
-             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
+     for b:=0 to 3 do
+         for a:=0 to 3 do
+             if (plocha[a,b]='*') then
              else
                  begin
                      value:=plocha[a,b];
@@ -108,9 +108,9 @@ var
   a,b:integer;
   value:string;
 begin
-     for b:=7 downto 1 do
-         for a:=7 downto 1 do
-             if (plocha[a,b]='*') or (plocha[a,b]='-') or (plocha[a,b]='|') then
+     for b:=3 downto 0 do
+         for a:=3 downto 0 do
+             if (plocha[a,b]='*') then
              else
                  begin
                      value:=plocha[a,b];
@@ -122,47 +122,33 @@ end;
 procedure write_area;
 begin
      //clrscr;
-     for y:= 1 to 7 do
-           for x:= 1 to 7 do
-           begin
-               if x = 7 then
-               begin
-                  writeln(plocha[x,y]);
-               end else
-               begin
-                   write(plocha[x,y]);
-               end;
-           end;
+     for y:=0 to 3 do
+     begin
+          for x:=0 to 3 do
+              if x = 3 then
+                 writeln(plocha[x,y])
+              else
+                  write(plocha[x,y]+'|');
+          writeln('-------');
+     end;
 end;
 
 procedure make_num;
 var
   rand:integer;
 begin
-     case random(4)+1 of
-          1: x:=1;
-          2: x:=3;
-          3: x:=5;
-          4: x:=7;
-     end;
-     case random(4)+1 of
-          1: y:=1;
-          2: y:=3;
-          3: y:=5;
-          4: y:=7;
-     end;
+     x:=random(4);
+     y:=random(4);
+
      if plocha[x,y]<>'*' then
-     begin
           exit;   //vyskočí z aktuálnej procedúry
-     end;
+
      rand:=random(100);
+
      if rand<40 then
-     begin
-        plocha[x,y]:='4';
-     end else if rand<90 then
-     begin
-        plocha[x,y]:='2';
-     end;
+        plocha[x,y]:='4'
+     else if rand<90 then
+             plocha[x,y]:='2'
 end;
 
 procedure up;
@@ -196,34 +182,19 @@ end;
 begin
  randomize;
   (*koment*) {koment} //koment
-  for y:= 1 to 7 do
-      for x:= 1 to 7 do
-      begin
-          if (y = 2) or (y = 4) or (y = 6) then
-          begin
-               plocha[x,y]:='-';
-          end else
-          begin
-              if ((x = 2) or (x = 4) or (x = 6)) then
-                 begin
-                      plocha[x,y]:='|';
-                 end
-                 else begin
-                      plocha[x,y]:='*';
-                 end;
-          end;
-      end;
-  for y:= 1 to 7 do
-           for x:= 1 to 7 do
-           begin
-               if x = 7 then
-               begin
-                  writeln(plocha[x,y]);
-               end else
-               begin
-                   write(plocha[x,y]);
-               end;
-           end;
+  for y:=0 to 3 do
+      for x:=0 to 3 do
+          plocha[x,y]:='*';
+
+  for y:=0 to 3 do
+  begin
+      for x:=0 to 3 do
+          if x = 3 then
+             writeln(plocha[x,y])
+          else
+              write(plocha[x,y]+'|');
+      writeln('-------');
+  end;
 
 while TRUE do
  begin

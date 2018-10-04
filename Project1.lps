@@ -2,27 +2,21 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="9"/>
+    <Version Value="10"/>
     <BuildModes Active="Default"/>
     <Units Count="1">
       <Unit0>
         <Filename Value="Project1.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="Project1"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="0"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="198"/>
-        <CursorPos X="4" Y="231"/>
-        <FoldState Value=" T3G0A7 pj0jJ0E1C"/>
-        <UsageCount Value="53"/>
+        <TopLine Value="10"/>
+        <CursorPos X="6" Y="124"/>
+        <FoldState Value=" T3G0A711U"/>
+        <UsageCount Value="57"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="0"/>
-    </General>
-    <JumpHistory Count="21" HistoryIndex="20">
+    <JumpHistory Count="25" HistoryIndex="24">
       <Position1>
         <Filename Value="Project1.pas"/>
         <Caret Line="29" Column="16" TopLine="21"/>
@@ -107,7 +101,22 @@
         <Filename Value="Project1.pas"/>
         <Caret Line="95" Column="17" TopLine="25"/>
       </Position21>
+      <Position22>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="125" Column="15" TopLine="161"/>
+      </Position22>
+      <Position23>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="184" Column="17" TopLine="161"/>
+      </Position23>
+      <Position24>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="204" Column="6" TopLine="161"/>
+      </Position24>
+      <Position25>
+        <Filename Value="Project1.pas"/>
+        <Caret Line="206" Column="4" TopLine="161"/>
+      </Position25>
     </JumpHistory>
   </ProjectSession>
-  <EditorMacros Count="0"/>
 </CONFIG>
