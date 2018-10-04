@@ -1,19 +1,19 @@
-program Project1;
+unit Unit1;
 
 {$mode objfpc}{$H+}
 
+interface
+
 uses
-  crt, sysutils,
-  {$IFDEF UNIX}{$IFDEF UseCThreads}
-  cthreads,
-  {$ENDIF}{$ENDIF}
-  Classes,
-  { you can add units after this };
+  Classes, SysUtils;
 
 var
   x,y:integer;
   c:char;
   plocha:array[0..3,0..3] of string;
+
+implementation
+
 procedure move_num_up(a:integer;value:string);
 begin
      if plocha[a,0]='*' then
@@ -69,7 +69,7 @@ begin
              else
                  begin
                      value:=plocha[a,b];
-                     plocha[a,b]:='*'; 
+                     plocha[a,b]:='*';
                      move_num_up(a,value);
                   end;
 end;
@@ -151,62 +151,5 @@ begin
              plocha[x,y]:='2'
 end;
 
-procedure up;
-begin
-     find_num_up;
-     make_num;
-     write_area;
-end;
-
-procedure down;
-begin
-     find_num_down;
-     make_num;
-     write_area;
-end;
-
-procedure left;
-begin
-     find_num_left;
-     make_num;
-     write_area;
-end;
-
-procedure right;
-begin
-     find_num_right;
-     make_num;
-     write_area;
-end;
-
-begin
- randomize;
-  (*koment*) {koment} //koment
-  for y:=0 to 3 do
-      for x:=0 to 3 do
-          plocha[x,y]:='*';
-
-  for y:=0 to 3 do
-  begin
-      for x:=0 to 3 do
-          if x = 3 then
-             writeln(plocha[x,y])
-          else
-              write(plocha[x,y]+'|');
-      writeln('-------');
-  end;
-
-while TRUE do
- begin
-   c:=readkey;
-   writeln(c);
-   case c of
-        'w':up;
-        'a':left;
-        's':down;
-        'd':right;
-        else writeln('Use w,a,s,d');
-   end;
- end;
 end.
 
