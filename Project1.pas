@@ -58,6 +58,7 @@ begin
            else if plocha[0,b]='*' then
                    plocha[0,b]:=value
 end;
+
 procedure find_num_up;
 var
   a,b:integer;
@@ -119,9 +120,58 @@ begin
                   end;
 end;
 
+procedure sum_up;
+var
+  a,b:integer;
+begin
+     for a:=0 to 3 do
+         for b:=0 to 3 do
+             if (plocha[a,b]=plocha[a,b+1]) and (plocha[a,b]<>'*') then
+             begin
+                 plocha[a,b]:=IntToStr(StrToInt(plocha[a,b])+StrToInt(plocha[a,b+1]));
+                 plocha[a,b+1]:='*';
+             end;
+end;
+procedure sum_down;
+var
+  a,b:integer;
+begin
+     for a:=3 downto 0 do
+         for b:=4 downto 1 do
+             if (plocha[a,b]=plocha[a,b-1]) and (plocha[a,b]<>'*') then
+             begin
+                 plocha[a,b]:=IntToStr(StrToInt(plocha[a,b])+StrToInt(plocha[a,b-1]));
+                 plocha[a,b-1]:='*';
+             end;
+end;
+procedure sum_left;
+var
+  a,b:integer;
+begin
+     for b:=0 to 3 do
+         for a:=0 to 3 do
+             if (plocha[a,b]=plocha[a+1,b]) and (plocha[a,b]<>'*') then
+             begin
+                 plocha[a,b]:=IntToStr(StrToInt(plocha[a,b])+StrToInt(plocha[a+1,b]));
+                 plocha[a+1,b]:='*';
+             end;
+end;
+procedure sum_right;
+var
+  a,b:integer;
+begin
+     for b:=3 downto 0 do
+         for a:=4 downto 1 do
+             if (plocha[a,b]=plocha[a-1,b]) and (plocha[a,b]<>'*') then
+             begin
+                 plocha[a,b]:=IntToStr(StrToInt(plocha[a,b])+StrToInt(plocha[a-1,b]));
+                 plocha[a-1,b]:='*';
+             end;
+end;
+
 procedure write_area;
 begin
-     //clrscr;
+     clrscr;
      for y:=0 to 3 do
      begin
           for x:=0 to 3 do
@@ -151,9 +201,22 @@ begin
              plocha[x,y]:='2'
 end;
 
+function oskar():boolean;
+var
+  a,b:integer;
+begin
+     for a:=0 to 3 do
+         for b:=0 to 3 do
+             if plocha[a,b]='2048' then
+                oskar:=FALSE
+             else
+                oskar:=TRUE;
+end;
+
 procedure up;
 begin
      find_num_up;
+     sum_up;
      make_num;
      write_area;
 end;
@@ -161,6 +224,7 @@ end;
 procedure down;
 begin
      find_num_down;
+     sum_down;
      make_num;
      write_area;
 end;
@@ -168,6 +232,7 @@ end;
 procedure left;
 begin
      find_num_left;
+     sum_left;
      make_num;
      write_area;
 end;
@@ -175,6 +240,7 @@ end;
 procedure right;
 begin
      find_num_right;
+     sum_right;
      make_num;
      write_area;
 end;
@@ -196,7 +262,7 @@ begin
       writeln('-------');
   end;
 
-while TRUE do
+while oskar() do
  begin
    c:=readkey;
    writeln(c);
