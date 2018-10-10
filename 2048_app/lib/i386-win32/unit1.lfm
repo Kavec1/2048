@@ -1,0 +1,364 @@
+object Form1: TForm1
+  Left = 1130
+  Height = 236
+  Top = 726
+  Width = 238
+  Caption = 'Form1'
+  ClientHeight = 236
+  ClientWidth = 238
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  LCLVersion = '1.2.6.0'
+  object S1: TShape
+    Left = 10
+    Height = 50
+    Top = 10
+    Width = 50
+  end
+  object ST00: TStaticText
+    Left = 10
+    Height = 20
+    Top = 25
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object S2: TShape
+    Left = 66
+    Height = 50
+    Top = 10
+    Width = 50
+  end
+  object S3: TShape
+    Left = 122
+    Height = 50
+    Top = 10
+    Width = 50
+  end
+  object S4: TShape
+    Left = 176
+    Height = 50
+    Top = 10
+    Width = 50
+  end
+  object S5: TShape
+    Left = 10
+    Height = 50
+    Top = 64
+    Width = 50
+  end
+  object S6: TShape
+    Left = 66
+    Height = 50
+    Top = 64
+    Width = 50
+  end
+  object S7: TShape
+    Left = 122
+    Height = 50
+    Top = 64
+    Width = 50
+  end
+  object S8: TShape
+    Left = 176
+    Height = 50
+    Top = 64
+    Width = 50
+  end
+  object S9: TShape
+    Left = 10
+    Height = 50
+    Top = 120
+    Width = 50
+  end
+  object S10: TShape
+    Left = 66
+    Height = 50
+    Top = 120
+    Width = 50
+  end
+  object S11: TShape
+    Left = 122
+    Height = 50
+    Top = 120
+    Width = 50
+  end
+  object S12: TShape
+    Left = 176
+    Height = 50
+    Top = 120
+    Width = 50
+  end
+  object S13: TShape
+    Left = 10
+    Height = 50
+    Top = 176
+    Width = 50
+  end
+  object S14: TShape
+    Left = 66
+    Height = 50
+    Top = 176
+    Width = 50
+  end
+  object S15: TShape
+    Left = 122
+    Height = 50
+    Top = 176
+    Width = 50
+  end
+  object S16: TShape
+    Left = 176
+    Height = 50
+    Top = 176
+    Width = 50
+  end
+  object ST01: TStaticText
+    Left = 66
+    Height = 20
+    Top = 25
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+  end
+  object ST3: TStaticText
+    Left = 122
+    Height = 20
+    Top = 25
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+  object ST4: TStaticText
+    Left = 176
+    Height = 20
+    Top = 25
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+  end
+  object ST5: TStaticText
+    Left = 10
+    Height = 20
+    Top = 80
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+  end
+  object ST6: TStaticText
+    Left = 66
+    Height = 20
+    Top = 80
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 5
+  end
+  object ST7: TStaticText
+    Left = 122
+    Height = 20
+    Top = 80
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 6
+  end
+  object ST8: TStaticText
+    Left = 176
+    Height = 20
+    Top = 80
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 7
+  end
+  object ST9: TStaticText
+    Left = 10
+    Height = 20
+    Top = 136
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 8
+  end
+  object ST10: TStaticText
+    Left = 66
+    Height = 20
+    Top = 136
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 9
+  end
+  object ST11: TStaticText
+    Left = 120
+    Height = 20
+    Top = 136
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 10
+  end
+  object ST12: TStaticText
+    Left = 176
+    Height = 20
+    Top = 136
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 11
+  end
+  object ST13: TStaticText
+    Left = 10
+    Height = 20
+    Top = 192
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 12
+  end
+  object ST14: TStaticText
+    Left = 64
+    Height = 20
+    Top = 192
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 13
+  end
+  object ST15: TStaticText
+    Left = 122
+    Height = 20
+    Top = 192
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 14
+  end
+  object ST16: TStaticText
+    Left = 176
+    Height = 20
+    Top = 192
+    Width = 50
+    Alignment = taCenter
+    Caption = '2048'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 15
+  end
+end
