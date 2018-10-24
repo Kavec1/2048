@@ -176,10 +176,12 @@ begin
      begin
           for x:=0 to 3 do
               if x = 3 then
-                 writeln(plocha[x,y])
+                 writeln(plocha[x,y]:5)
               else
-                  write(plocha[x,y]+'|');
-          writeln('-------');
+                  write(plocha[x,y]:5);
+          textColor(12);
+          writeln('--------------------');
+          textColor(10);
      end;
 end;
 
@@ -256,10 +258,12 @@ begin
   begin
       for x:=0 to 3 do
           if x = 3 then
-             writeln(plocha[x,y])
+             writeln(plocha[x,y]:5)
           else
-              write(plocha[x,y]+'|');
-      writeln('-------');
+              write(plocha[x,y]:5);
+      textColor(12);
+      writeln('--------------------');
+      textColor(10);
   end;
 
 while oskar() do
