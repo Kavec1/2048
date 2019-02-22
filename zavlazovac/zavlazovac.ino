@@ -40,7 +40,7 @@ void setup() {
   pinMode(tempSensor, INPUT);
   pinMode(interruptPin, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(interruptPin), change, RISING);
-  Timer1.initialize(2000000); // initialize timer1, and set and period in microseconds
+  Timer1.initialize(2000000); // initialize timer1, and set the period in microseconds
   Timer1.attachInterrupt(sensorReading); // attaches sensorReading() as a timer interrupt function
   delay(2000);
 }
