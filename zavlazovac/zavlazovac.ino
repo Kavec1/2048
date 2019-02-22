@@ -47,18 +47,18 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  /*lcd.clear();
-    if (state){
+/*lcd.clear();
+  if (state){
     lcd.print("Soil moisture:");
     lcd.setCursor(0, 1);
     lcd.print(humValue);
-    }else{
+  }else{
     lcd.print("Temperature:");
     lcd.setCursor(0, 1);
     lcd.print(tempValue);
     lcd.write(byte(0));
     lcd.print("C");
-    } */
+  } */
 lcd.clear();
 delay(500);
 }
