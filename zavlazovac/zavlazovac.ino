@@ -22,19 +22,11 @@ volatile float humValue = 0;
 volatile float tempValue = 0;
 volatile bool state = true;
 
-float mapFloat(long x, float in_min, float in_max, float out_min, float out_max) {
-  return (float)(x - in_min) * (out_max - out_min) / (float)(in_max - in_min) + out_min;
-}
-
-void sensorReading() {
-  humValue = analogRead(humSensor);
-  tempValue = mapFloat(analogRead(tempSensor), 0, 1023, 0, 445.11);
-}
-
-void change() {
-  digitalWrite(13, digitalRead(13) ^ 1);
-  state = !state;
-}
+float mapFloat(long x, float in_min, float in_max, float out_min, float out_max);
+void sensorReading();
+void change();
+void setup();
+void loop();
 
 void setup() {
   LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
@@ -72,3 +64,14 @@ lcd.clear();
 delay(500);
 }
 
+float mapFloat(long x, float in_min, float in_max, float out_min, float out_max) {
+  return (float)(x - in_min) * (out_max - out_min) / (float)(in_max - in_min) + out_min;
+}
+void sensorReading() {
+  humValue = analogRead(humSensor);
+  tempValue = mapFloat(analogRead(tempSensor), 0, 1023, 0, 445.11);
+}
+void change() {
+  digitalWrite(13, digitalRead(13) ^ 1);
+  state = !state;
+}
