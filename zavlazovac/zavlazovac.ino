@@ -7,6 +7,10 @@ const byte rs = 12, en = 11, d4 = 4, d5 = 5, d6 = 6, d7 = 7;
 const byte interruptPin = 2;
 const byte pumpPin = 3;
 
+volatile float humValue = 0;
+volatile float tempValue = 0;
+volatile bool state = true;
+
 const byte customChar[8] = {
   0b00110,
   0b01001,
@@ -17,10 +21,6 @@ const byte customChar[8] = {
   0b00000,
   0b00000,
 };
-
-volatile float humValue = 0;
-volatile float tempValue = 0;
-volatile bool state = true;
 
 float mapFloat(long x, float in_min, float in_max, float out_min, float out_max);
 void sensorReading();
