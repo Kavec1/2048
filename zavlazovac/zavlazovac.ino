@@ -33,7 +33,6 @@ void setup() {
   lcd.createChar(0, customChar);
   lcd.begin(16, 2);
   lcd.print("Zavlazovac");
-  delay(500);
 
   pinMode(13, OUTPUT);
   pinMode(pumpPin, OUTPUT);
