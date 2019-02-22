@@ -40,6 +40,8 @@ void setup() {
   LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
   lcd.createChar(0, customChar);
   lcd.begin(16, 2);
+  lcd.print("Zavlazovac");
+  delay(500);
 
   pinMode(13, OUTPUT);
   pinMode(pumpPin, OUTPUT);
@@ -66,8 +68,6 @@ void loop() {
     lcd.write(byte(0));
     lcd.print("C");
     } */
-lcd.print("Zavlazovac");
-delay(500);
 lcd.clear();
 delay(500);
 }
