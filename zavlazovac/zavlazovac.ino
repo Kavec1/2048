@@ -1,4 +1,4 @@
-#include <TimerOne.h>
+#include <TimerOne.h> //https://www.instructables.com/id/Create-Internal-Interrupt-In-Arduino/  odtialto si budes musiet stiahnut tuto kniznucu
 #include <LiquidCrystal.h>
 
 const int humSensor = A0;
